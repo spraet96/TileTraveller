@@ -23,40 +23,43 @@ def move(x_pos,y_pos,direction):
     elif direction.lower() == 'w':
         return x_pos -1,y_pos
 
-
+print("You can travel: {}.".format(N))
 
 while True:
-    if direction.lower() in valid:
-
-        if (x_pos == 1 and y_pos == 1)  or  (x_pos == 2 and y_pos == 1):
-            print("You can travel: {}.".format(N))
-            valid = ('n')
-        elif (x_pos == 1 and y_pos == 2):
-            print("You can travel: {} or {} or {}.".format(N,E,S))
-            valid = ('n', 'e', 's')
-        elif (x_pos == 2 and y_pos == 2) or (x_pos == 3 and y_pos == 3):
-            print("You can travel: {} or {}.".format(S,W))
-            valid = ('s', 'w')
-        elif (x_pos == 1 and y_pos == 3):
-            print("You can travel: {} or {}.".format(S,E))
-            valid = ('s', 'e')
-        elif (x_pos == 2 and y_pos == 3):
-            print("You can travel: {} or {}.".format(W,E))
-            valid = ('w', 'e')
-        elif (x_pos == 3 and y_pos == 2):
-            print("You can travel: {} or {}.".format(N,S))
-            valid = ('n', 's')
-        elif (x_pos == 3 and y_pos == 1):
-            print('Victory!')
-            exit()
-            
-
-
     direction = (input("Direction: "))
+    
     if direction.lower() in valid:
         x_pos,y_pos = move(x_pos,y_pos, direction)
     else:
-        print('Not a valid direction')
+        print('Not a valid direction!')
+    
+    if (x_pos == 1 and y_pos == 1)  or  (x_pos == 2 and y_pos == 1):
+        print("You can travel: {}.".format(N))
+        valid = ('n')
+    elif (x_pos == 1 and y_pos == 2):
+        print("You can travel: {} or {} or {}.".format(N,E,S))
+        valid = ('n', 'e', 's')
+    elif (x_pos == 2 and y_pos == 2) or (x_pos == 3 and y_pos == 3):
+        print("You can travel: {} or {}.".format(S,W))
+        valid = ('s', 'w')
+    elif (x_pos == 1 and y_pos == 3):
+        print("You can travel: {} or {}.".format(E,S))
+        valid = ('s', 'e')
+    elif (x_pos == 2 and y_pos == 3):
+        print("You can travel: {} or {}.".format(E,W))
+        valid = ('w', 'e')
+    elif (x_pos == 3 and y_pos == 2):
+        print("You can travel: {} or {}.".format(N,S))
+        valid = ('n', 's')
+    elif (x_pos == 3 and y_pos == 1):
+        print('Victory!')
+        break
+            
+
+
+    
+
+        
 
     
    
